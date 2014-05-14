@@ -1,0 +1,42 @@
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'spring-boot'
+apply plugin: 'flyway'
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:1.0.2.RELEASE"
+        classpath "org.flywaydb:flyway-gradle-plugin:3.0"
+        classpath 'org.springframework:springloaded:1.2.0.RELEASE'
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies{
+  compile "org.springframework.boot:spring-boot:1.0.2.RELEASE"
+  compile "org.springframework.boot:spring-boot-starter-web"
+  compile "org.springframework.boot:spring-boot-starter-data-jpa"
+  compile "org.springframework.boot:spring-boot-starter-thymeleaf"
+  compile "org.springframework.boot:spring-boot-starter-actuator"
+
+  compile "postgresql:postgresql:9.1-901.jdbc4"
+
+  testCompile 'junit:junit:4.11'
+}
+
+flyway {
+    url = "jdbc:postgresql://localhost/cats_development"
+    user = 'pivotal-mlbam'
+    password = ''
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '1.11'
+}

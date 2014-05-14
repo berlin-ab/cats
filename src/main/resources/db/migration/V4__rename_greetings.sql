@@ -1,0 +1,1 @@
+ALTER TABLE Greetings RENAME TO greeting
