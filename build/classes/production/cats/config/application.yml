@@ -1,10 +1,6 @@
 spring:
-#  liquibase:
-#    defaultSchema: cats_development
   datasource:
     url: jdbc:postgresql://localhost/cats_development
-    username: pivotal-mlbam
+    username: pivotal
     password:
     driverClassName: org.postgresql.Driver
-  thymeleaf:
-    cache: false

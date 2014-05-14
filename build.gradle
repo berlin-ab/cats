@@ -26,9 +26,17 @@ dependencies{
   compile "org.springframework.boot:spring-boot-starter-thymeleaf"
   compile "org.springframework.boot:spring-boot-starter-actuator"
 
+  compile 'com.sparkjava:spark-core:2.0.0'
   compile "postgresql:postgresql:9.1-901.jdbc4"
 
   testCompile 'junit:junit:4.11'
+
+  compile 'org.codehaus.groovy:groovy-all:2.3.0'
+}
+
+task console(type: JavaExec) {
+    main = 'Console'
+    classpath = sourceSets.main.runtimeClasspath
 }
 
 flyway {

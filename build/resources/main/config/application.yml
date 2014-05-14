@@ -1,0 +1,6 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost/cats_development
+    username: pivotal
+    password:
+    driverClassName: org.postgresql.Driver
