@@ -11,21 +11,21 @@ public class CatsController {
     @Autowired
     GreetingRepository repository;
 
-    @RequestMapping("/greetings")
-    public String greetings(Model model) {
+    @RequestMapping("/greetings2")
+    public String greetingsFoo(Model model) {
         System.out.println("iooiioioppoiiopiop");
         model.addAttribute("messages", repository.findAll());
         return "greetings";
     }
 
     @RequestMapping("/testing")
-    public String testing() {
+    public String testingFoo() {
         return "testing";
     }
 
     @RequestMapping("/createGreeting")
     public String createGreeting() {
-        repository.save(new Greeting("meow"));
+        repository.save(new Greeting("foo"));
         return "redirect:/greetings";
     }
 

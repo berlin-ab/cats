@@ -3,6 +3,13 @@ apply plugin: 'idea'
 apply plugin: 'spring-boot'
 apply plugin: 'flyway'
 
+idea {
+    module {
+        inheritOutputDirs = false
+        outputDir = file("$buildDir/classes/main/")
+    }
+}
+
 buildscript {
     repositories {
         mavenCentral()
@@ -10,7 +17,7 @@ buildscript {
 
     dependencies {
         classpath "org.springframework.boot:spring-boot-gradle-plugin:1.0.2.RELEASE"
-        classpath "org.flywaydb:flyway-gradle-plugin:3.0"
+        classpath 'com.googlecode.flyway:flyway-gradle-plugin:2.3.1'
         classpath 'org.springframework:springloaded:1.2.0.RELEASE'
     }
 }
