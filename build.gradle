@@ -19,12 +19,22 @@ repositories {
     mavenCentral()
 }
 
+task('console', type: JavaExec) {
+    main = 'cats.Console'
+    project.apply plugin: "groovy"
+    project.dependencies.add("compile", project.dependencies.localGroovy())
+    classpath = project.sourceSets.main.runtimeClasspath
+}
+
 dependencies{
   compile "org.springframework.boot:spring-boot:1.0.2.RELEASE"
   compile "org.springframework.boot:spring-boot-starter-web"
   compile "org.springframework.boot:spring-boot-starter-data-jpa"
   compile "org.springframework.boot:spring-boot-starter-thymeleaf"
   compile "org.springframework.boot:spring-boot-starter-actuator"
+  compile 'org.codehaus.groovy:groovy-all:2.3.0'
+  compile 'org.fusesource.jansi:jansi:1.11'
+  compile 'jline:jline:2.11'
 
   compile "postgresql:postgresql:9.1-901.jdbc4"
 
