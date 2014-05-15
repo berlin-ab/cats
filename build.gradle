@@ -21,9 +21,8 @@ repositories {
 
 task('console', type: JavaExec) {
     main = 'cats.Console'
-    project.apply plugin: "groovy"
-    project.dependencies.add("compile", project.dependencies.localGroovy())
     classpath = project.sourceSets.main.runtimeClasspath
+    standardInput = System.in
 }
 
 dependencies{
