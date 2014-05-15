@@ -11,13 +11,13 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@ComponentScan
+@ComponentScan("cats")
 @EnableAutoConfiguration
 public class Console {
     public static void main(String[] args) {
         ApplicationContext context = new SpringApplicationBuilder()
                 .main(Console.class)
-                .sources(Console.class)
+                .sources(Console.class, cats.Application.class)
                 .showBanner(false)
                 .headless(true)
                 .web(false)
