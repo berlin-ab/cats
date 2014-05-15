@@ -20,7 +20,7 @@ repositories {
 }
 
 task('console', type: JavaExec) {
-    main = 'cats.Console'
+    main = 'utils.Console'
     classpath = project.sourceSets.main.runtimeClasspath
     standardInput = System.in
 }
