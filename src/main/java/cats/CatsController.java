@@ -11,9 +11,8 @@ public class CatsController {
     @Autowired
     GreetingRepository repository;
 
-    @RequestMapping("/greetings2")
-    public String greetingsFoo(Model model) {
-        System.out.println("iooiioioppoiiopiop");
+    @RequestMapping("/greetings")
+    public String greetings(Model model) {
         model.addAttribute("messages", repository.findAll());
         return "greetings";
     }
@@ -25,7 +24,7 @@ public class CatsController {
 
     @RequestMapping("/createGreeting")
     public String createGreeting() {
-        repository.save(new Greeting("foo"));
+        repository.save(new Greeting("bat"));
         return "redirect:/greetings";
     }
 
